@@ -1,15 +1,17 @@
 package com.Spencer.CapstoneProject.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HelloController {
+public class HomeController {
 
     @RequestMapping(value="")
-    @ResponseBody
-    public String index(){
-        return "Hello World";
+    public String index(Model model){
+
+        model.addAttribute("title", "Music Gear Resale");
+
+        return "home/index";
     }
 }
